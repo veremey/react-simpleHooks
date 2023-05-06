@@ -1,7 +1,7 @@
-import {useState} from 'react'
+import {useEffect, useState} from 'react'
 
 // custom hook
-const useCounter = ({initialValue, incrementValue}) => {
+const useCounter = (initialValue, incrementValue) => {
   const [count, setCount] = useState(initialValue);
   const increment = () => setCount(currentCount => currentCount + incrementValue);
 
@@ -9,7 +9,16 @@ const useCounter = ({initialValue, incrementValue}) => {
 }
 
 export const Counter = () => {
-  const [count, increment] = useCounter({initialValue: 2, incrementValue: 1});
+  // not optimised. initialValue will be runnig all the time
+  //const initialValue = Number(window.localStorage.getItem('count') || 0);
+  
+  // !!! optimised. initialValue will be runnig once
+  const initialValue = () => Number(window.localStorage.getItem('count') || 0);
+  const [count, setCount] = useState(initialValue);
+  const increment = () => setCount(currentCount => currentCount + 1);
+  useEffect(() => {
+    window.localStorage.setItem('count', count);
+  }, [count]) 
   
   return <button onClick={increment}>{count}</button>
 }
