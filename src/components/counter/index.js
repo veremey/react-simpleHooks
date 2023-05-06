@@ -1,7 +1,7 @@
 import {useState} from 'react'
 
 // custom hook
-const useCounter = (initialValue, incrementValue) => {
+const useCounter = ({initialValue, incrementValue}) => {
   const [count, setCount] = useState(initialValue);
   const increment = () => setCount(currentCount => currentCount + incrementValue);
 
@@ -9,7 +9,7 @@ const useCounter = (initialValue, incrementValue) => {
 }
 
 export const Counter = () => {
-  const [count, increment] = useCounter(2, 3);
+  const [count, increment] = useCounter({initialValue: 2, incrementValue: 1});
   
   return <button onClick={increment}>{count}</button>
 }
