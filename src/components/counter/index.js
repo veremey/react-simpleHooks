@@ -1,15 +1,15 @@
 import {useState} from 'react'
 
 // custom hook
-const useCounter = () => {
-  const [count, setCount] = useState(0);
-  const increment = () => setCount(currentCount => currentCount + 1);
+const useCounter = (initialValue, incrementValue) => {
+  const [count, setCount] = useState(initialValue);
+  const increment = () => setCount(currentCount => currentCount + incrementValue);
 
   return [count, increment];
 }
 
 export const Counter = () => {
-  const [count, increment] = useCounter();
+  const [count, increment] = useCounter(2, 3);
   
   return <button onClick={increment}>{count}</button>
 }
