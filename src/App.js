@@ -2,8 +2,8 @@ import './App.css';
 
 import { Counter } from './components/counter'
 import { Formular } from './components/contactform/contactform'
+import LazyTilt from './components/tilt/lazy.tilt';
 import Stopwatch from './components/stopwatch/stopwatch'
-import { Usage } from './components/tilt/tilt'
 
 function App() {
   return (
@@ -11,7 +11,7 @@ function App() {
       <header className="App-header">
         <Counter />
         <br />
-        <Usage/>
+        <LazyTilt/>
         <br />
         <Stopwatch />
         <hr/>

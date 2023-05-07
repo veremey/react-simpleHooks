@@ -1,8 +1,7 @@
-import './tilt.css'
-
-import { useEffect, useRef } from 'react'
+import {useEffect, useRef} from 'react'
 
 import VanillaTilt from 'vanilla-tilt'
+import styles from  './tilt.css'
 
 const Tilt = (props) => {
   const tiltRef = useRef();
@@ -19,16 +18,10 @@ const Tilt = (props) => {
   }, [])
   
   return (
-    <div ref={tiltRef} className="tilt-root">
-      <div className="tilt-child">{props.children}</div>
+    <div ref={tiltRef} className={styles.tiltRoot}>
+      <div className={styles.tiltChild}>{props.children}</div>
     </div>
   )
 }
 
-export const Usage = () => (
-  <div className='totally-centered'>
-    <Tilt>
-      <div className="totally-centered">Hello tilt</div>
-    </Tilt>
-  </div>
-)
+export default Tilt;
