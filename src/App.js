@@ -13,6 +13,10 @@ function App() {
         <Usage/>
         <br />
         <Stopwatch />
+        <hr/>
+        <hr/>
+        <br />
+        <Stopwatch />
       </header>
     </div>
   );
