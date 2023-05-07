@@ -1,6 +1,7 @@
 import './App.css';
 
 import { Counter } from './components/counter'
+import { Formular } from './components/contactform/contactform'
 import Stopwatch from './components/stopwatch/stopwatch'
 import { Usage } from './components/tilt/tilt'
 
@@ -16,7 +17,7 @@ function App() {
         <hr/>
         <hr/>
         <br />
-        <Stopwatch />
+        <Formular />
       </header>
     </div>
   );
