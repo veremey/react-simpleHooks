@@ -1,6 +1,7 @@
 import './App.css';
 
 import { Counter } from './components/counter'
+import Stopwatch from './components/stopwatch/stopwatch'
 import { Usage } from './components/tilt/tilt'
 
 function App() {
@@ -10,6 +11,8 @@ function App() {
         <Counter />
         <br />
         <Usage/>
+        <br />
+        <Stopwatch />
       </header>
     </div>
   );
